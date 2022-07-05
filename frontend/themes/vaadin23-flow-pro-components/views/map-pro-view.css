@@ -1,0 +1,9 @@
+.map-pro-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.map-pro-view .map {
+  flex: 1;
+}
