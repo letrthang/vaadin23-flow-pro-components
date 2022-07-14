@@ -1,8 +1,13 @@
 package com.example.application.data.service;
 
 import com.example.application.data.entity.SamplePerson;
+
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -32,6 +37,14 @@ public class SamplePersonService {
 
     public Page<SamplePerson> list(Pageable pageable) {
         return repository.findAll(pageable);
+    }
+
+    public Stream<SamplePerson> listStream(Pageable pageable) {
+        return repository.findAll(pageable).stream();
+    }
+
+    public Stream<SamplePerson> listAll(Pageable pageable) {
+        return repository.findAll(pageable).stream();
     }
 
     public int count() {

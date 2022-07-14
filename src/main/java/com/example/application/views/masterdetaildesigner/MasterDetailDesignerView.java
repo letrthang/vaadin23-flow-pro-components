@@ -78,6 +78,7 @@ public class MasterDetailDesignerView extends LitTemplate implements HasStyle, B
     public MasterDetailDesignerView(SamplePersonService samplePersonService) {
         this.samplePersonService = samplePersonService;
         addClassNames("master-detail-designer-view");
+        grid.setSelectionMode(Grid.SelectionMode.MULTI);
         grid.addColumn(SamplePerson::getFirstName).setHeader("First Name").setAutoWidth(true);
         grid.addColumn(SamplePerson::getLastName).setHeader("Last Name").setAutoWidth(true);
         grid.addColumn(SamplePerson::getEmail).setHeader("Email").setAutoWidth(true);
@@ -93,21 +94,21 @@ public class MasterDetailDesignerView extends LitTemplate implements HasStyle, B
 
         grid.addColumn(importantRenderer).setHeader("Important").setAutoWidth(true);
 
-        grid.setItems(query -> samplePersonService.list(
+        grid.setItems(query -> samplePersonService.listAll(
                 PageRequest.of(query.getPage(), query.getPageSize(), VaadinSpringDataHelpers.toSpringDataSort(query)))
-                .stream());
+                );
         grid.addThemeVariants(GridVariant.LUMO_NO_BORDER);
         grid.setHeightFull();
 
         // when a row is selected or deselected, populate form
-        grid.asSingleSelect().addValueChangeListener(event -> {
+        /*grid.asSingleSelect().addValueChangeListener(event -> {
             if (event.getValue() != null) {
                 UI.getCurrent().navigate(String.format(SAMPLEPERSON_EDIT_ROUTE_TEMPLATE, event.getValue().getId()));
             } else {
                 clearForm();
                 UI.getCurrent().navigate(MasterDetailDesignerView.class);
             }
-        });
+        });*/
 
         // Configure Form
         binder = new BeanValidationBinder<>(SamplePerson.class);
