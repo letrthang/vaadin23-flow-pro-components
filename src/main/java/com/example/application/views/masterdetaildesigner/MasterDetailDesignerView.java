@@ -79,8 +79,8 @@ public class MasterDetailDesignerView extends LitTemplate implements HasStyle, B
         this.samplePersonService = samplePersonService;
         addClassNames("master-detail-designer-view");
         grid.setSelectionMode(Grid.SelectionMode.MULTI);
-        grid.addColumn(SamplePerson::getFirstName).setHeader("First Name").setAutoWidth(true);
-        grid.addColumn(SamplePerson::getLastName).setHeader("Last Name").setAutoWidth(true);
+        grid.addColumn(SamplePerson::getFirstName).setHeader("First Name").setAutoWidth(true).setSortProperty("firstName");
+        grid.addColumn(SamplePerson::getLastName).setHeader("Last Name").setAutoWidth(true).setSortProperty("lastName");
         grid.addColumn(SamplePerson::getEmail).setHeader("Email").setAutoWidth(true);
         grid.addColumn(SamplePerson::getPhone).setHeader("Phone").setAutoWidth(true);
         grid.addColumn(SamplePerson::getDateOfBirth).setHeader("Date Of Birth").setAutoWidth(true);
