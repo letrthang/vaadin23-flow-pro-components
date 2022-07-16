@@ -44,7 +44,7 @@ public class SamplePersonService {
     }
 
     public Stream<SamplePerson> listAll(Pageable pageable) {
-        return repository.findAll(pageable).stream();
+        return repository.findAllByOrderByFirstNameAscLastNameAsc(pageable).stream();
     }
 
     public int count() {

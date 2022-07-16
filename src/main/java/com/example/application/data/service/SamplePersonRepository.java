@@ -10,6 +10,5 @@ import java.util.UUID;
 
 public interface SamplePersonRepository extends JpaRepository<SamplePerson, UUID> {
 
-    @Override
-    Page<SamplePerson> findAll(Pageable p);
+    Page<SamplePerson> findAllByOrderByFirstNameAscLastNameAsc(Pageable p);
 }
