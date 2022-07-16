@@ -36,7 +36,7 @@ public class DataGenerator {
             samplePersonRepositoryGenerator.setData(SamplePerson::setDateOfBirth, DataType.DATE_OF_BIRTH);
             samplePersonRepositoryGenerator.setData(SamplePerson::setOccupation, DataType.OCCUPATION);
             samplePersonRepositoryGenerator.setData(SamplePerson::setImportant, DataType.BOOLEAN_10_90);
-            samplePersonRepository.saveAll(samplePersonRepositoryGenerator.create(100, seed));
+            samplePersonRepository.saveAll(samplePersonRepositoryGenerator.create(1000, seed));
 
             logger.info("Generated demo data");
         };
