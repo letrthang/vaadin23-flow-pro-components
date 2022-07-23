@@ -2,6 +2,7 @@ package com.example.application.views.helloworld;
 
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.dependency.JavaScript;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -12,6 +13,7 @@ import com.vaadin.flow.router.RouteAlias;
 @PageTitle("Hello World")
 @Route(value = "hello")
 @RouteAlias(value = "")
+@JavaScript("context://javascript/clientLocation.js")
 public class HelloWorldView extends HorizontalLayout {
 
     private TextField name;
