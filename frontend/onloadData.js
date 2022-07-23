@@ -8,7 +8,6 @@
  */
 
 window.addEventListener('load', function () {
-    console.log("load js file ==================== ok");
+    console.log("load js file onloadData.js ==================== ok");
     window.scrollTo(0, 0);
-    //do something here but it never triggers when page is loaded
 })

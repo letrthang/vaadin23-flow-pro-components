@@ -15,3 +15,8 @@ window.addEventListener('vaadin-router-location-changed', (e) => {
     document.title = appStore.applicationName;
   }
 });
+
+// window.addEventListener('load', function () {
+//   console.log("test load js in file index.ts ==================== ok");
+// })
+
