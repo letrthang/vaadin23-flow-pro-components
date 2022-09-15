@@ -160,8 +160,8 @@
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
-            <version>1.6.9</version>
-            <!-- avoid conflict with hilla -->
+            <version>1.6.7</version>
+            <!-- avoid conflict with hilla. Note: change springdoc-openapi-ui version to 1.6.11 will not work -->
             <exclusions>
                 <exclusion>
                     <groupId>io.swagger.core.v3</groupId>
